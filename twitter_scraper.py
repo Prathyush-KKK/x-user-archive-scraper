@@ -73,6 +73,11 @@ async def run():
             # Wait for page to load
             await page.wait_for_timeout(5000)
 
+            # Click "Latest"
+            await page.click("//span[text()='Latest']")
+            await page.wait_for_timeout(3000)
+
+
             # Scroll for SCROLL_DURATION_SEC
             print("  ↘ Scrolling...")
             end_time = datetime.now().timestamp() + SCROLL_DURATION_SEC
